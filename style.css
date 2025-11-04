@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  position: relative;
   padding: 0;
   margin: 0;
   font-family: 'Figtree', sans-serif;
@@ -58,6 +59,9 @@ button {
   background-color: transparent;
 }
 
+p {
+  margin: 0;
+}
 a {
   color: var(--maroon);
   text-decoration-color: transparent;
@@ -80,4 +84,82 @@ a:active {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* Header */
+.header {
+  background-color: rgba(255, 255, 255, 85%);
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+.banner {
+  padding: 0.5rem 1rem;
+  background-color: var(--navy);
+  color: var(--white);
+  text-align: center;
+}
+
+.banner a {
+  color: var(--white);
+}
+
+.banner a:focus,
+.banner a:hover,
+.banner a:active {
+  text-decoration-color: var(--white);
+}
+
+.primary_logo {
+  margin: 0;
+}
+
+.primary_logo svg {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+}
+
+.nav_container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  max-width: 115rem;
+  margin: 0 auto;
+}
+
+/* Navigation  */
+
+.menu_button {
+  display: none;
+}
+
+.main_nav,
+.main_social {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.main_social {
+  gap: 0.5rem;
+}
+
+.main_social a {
+  padding: 0.75rem;
+  display: block;
+}
+
+.main_social svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
