@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('scrolled', !entry.isIntersecting);
     },
     {
-      rootMargin: '50px 0px 0px',
+      rootMargin: '35px 0px 0px',
     }
   );
   observer.observe(onScroll);
