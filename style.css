@@ -57,28 +57,9 @@ svg {
 button {
   border: none;
   background-color: transparent;
+  padding: 0;
 }
 
-.button {
-  padding: 1rem 2rem;
-  border: 2px solid var(--white);
-  color: var(--white);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: all 300ms ease-in-out;
-  text-shadow: none;
-  border-radius: 50vh;
-}
-
-.button:focus,
-.button:hover,
-.button:active {
-  background-color: var(--white);
-  color: var(--black);
-  cursor: pointer;
-}
 h1,
 h2,
 h3,
@@ -116,6 +97,33 @@ a:active {
   width: 1px;
 }
 
+.button {
+  padding: 1rem 2rem;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+  text-shadow: none;
+  border-radius: 50vh;
+  display: inline-block;
+}
+
+.button:focus,
+.button:hover,
+.button:active {
+  background-color: var(--white);
+  color: var(--black);
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .button {
+    padding: 0.75rem 1rem;
+  }
+}
 /* Header */
 .header {
   background-color: rgba(255, 255, 255, 75%);
@@ -176,7 +184,7 @@ a:active {
   background-color: rgba(255, 255, 255, 100%);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 968px) {
   .header {
     position: sticky;
   }
@@ -362,6 +370,9 @@ ul.hero_slides {
 }
 
 li.slide {
+  /* display: flex;
+  align-content: center;
+  flex-wrap: wrap; */
   position: absolute;
   inset: 0;
   width: 100%;
@@ -413,6 +424,7 @@ li.slide {
 }
 
 .hero_text-wrap {
+  width: 768px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -420,6 +432,7 @@ li.slide {
   color: var(--white);
   z-index: 3;
   text-align: center;
+  max-width: calc(100% - 2rem);
 }
 
 .hero_text-wrap .secondary_hero {
@@ -429,7 +442,26 @@ li.slide {
 }
 
 .hero_text-wrap p {
-  margin: 2rem 0;
-  font-size: 1.5rem;
+  margin: clamp(0.5rem, 2.5vw, 2rem) 0;
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 75%);
+}
+
+.hero_text-wrap .button {
+}
+
+@media (max-width: 960px) {
+  ul.hero_slides,
+  .slide .figure {
+    aspect-ratio: 16 / 9;
+  }
+
+  .slide_dots {
+    bottom: 0;
+  }
+
+  .dot button {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }
