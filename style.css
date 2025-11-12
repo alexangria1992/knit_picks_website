@@ -97,6 +97,16 @@ a:active {
   width: 1px;
 }
 
+.secondary_heading {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.tertiary_heading {
+  font-size: 1.5rem;
+  margin: 1rem 0 0;
+}
+
 .button {
   padding: 1rem 2rem;
   border: 2px solid var(--white);
@@ -122,12 +132,17 @@ a:active {
 .wrap {
   width: 100rem;
   max-width: calc(100% - 4rem);
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 @media (max-width: 960px) {
   .wrap {
     max-width: calc(100% - 2rem);
+    margin: 1rem auto;
+  }
+
+  .tertiary_heading {
+    margin: 0.5rem 0 0;
   }
   .button {
     padding: 0.75rem 1rem;
@@ -365,7 +380,7 @@ a:active {
 .hero {
   position: relative;
   z-index: 0;
-  margin: 0 0 2rem;
+  margin: 0;
 }
 ul.hero_slides {
   position: relative;
@@ -493,19 +508,11 @@ li.slide {
   height: 100%;
   object-fit: cover;
 }
-.card .tertiary_heading {
-  font-size: 1.5rem;
-  margin: 1rem 0 0;
-}
 
 @media (max-width: 960px) {
   .card_section .wrap {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-  }
-
-  .card .tertiary_heading {
-    margin: 0.5rem 0 0;
   }
 }
 
@@ -514,4 +521,61 @@ li.slide {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+}
+
+/* Four Cards */
+.four_cards {
+  padding: 2rem 0;
+}
+
+.desc_wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 2rem;
+}
+
+.grid_item {
+  text-align: center;
+}
+
+.grid_item p {
+  margin: 0 0 1rem;
+  padding: 0 1rem;
+}
+
+.grid_item p:first-of-type {
+  margin: 0 0 2rem;
+}
+.four_cards .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.grid_item .figure {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.grid_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid_item .button {
+  background-color: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+  padding: 0.75rem 1.75rem;
+}
+
+.grid_item .button:focus,
+.grid_item .button:hover,
+.grid_item .button:active {
+  background-color: var(--white);
+  color: var(--navy);
 }
